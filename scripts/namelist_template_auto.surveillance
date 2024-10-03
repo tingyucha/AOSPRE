@@ -1,0 +1,47 @@
+&options
+
+ wrf_glob_pattern = "FULLMDwrfout_000????s.nc",
+ output_filename_format_string = '("surveillance_",A,"_to_",A,".nc")'
+
+ leg_initial_time = STIME
+ leg_time_seconds = TOTALTIME
+ conv_minute = 60
+ time_evolution = .TRUE.
+
+ flight_waypoints_x    =    XIND
+ flight_waypoints_y    =    YIND
+ flight_waypoints_vert =    ZIND
+  
+ flight_level_coordinate   = "Z"
+
+ air_speed = ACSPD. ! meters per second
+ herky_jerky = .FALSE.
+
+/
+
+&attitude_external_source
+  use_external_attitudes = .False.,
+  attitude_file = "attitude.nc",
+  attitude_orientation_rotate_degrees = 182.0,
+/
+
+&scanning
+
+ CRSIM_Config = "CONFIG_C"
+
+ scanning_table = "Scanning_Table_LHS_PPI_sector_Z"
+ pulse_repetition_frequency     = 2500
+ pulses_per_pulse_set           = 2
+ revisits_per_acquisition_time  = 20
+ beams_per_acquisition_time     = 6
+
+ skip_seconds_between_scans = 28.32
+
+ meters_between_gates           = 150.
+ meters_to_center_of_first_gate = 150.
+ max_range_in_meters            = 75000.
+ 
+/
+
+&config_output
+/

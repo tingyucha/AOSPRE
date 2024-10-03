@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# This config file supplies the necessary arguments to get the
+# flight waypoints when running flight_planner.sh. The config
+# file expects the following arguments:
+#
+# 1) TOTAL_TIME - the total time in seconds of the flight
+# 2) MODEL_DX   - this is the horizontal grid spacing in meters
+# 3) START_X    - this is the starting x index in the model grid space
+# 4) START_Y    - this is the starting y index in the model grid space
+# 5) START_ALT  - this is the starting aircraft height in meters
+# 6) AC_HEAD    - this is an array of leg headings of the flight in degrees - 0 to 360 (integers only)
+# 7) LEG_TIME   - this is the time desired to fly at each of the headings in AC_HEAD in whole seconds
+# 8) AC_ALT     - this is the array of heights of the aircraft AGL in meters (integer only)
+# 9) AC_SPEED.  - this is the air speed of the aircraft in meters per second (integer only)
+
+# This does require looking at any model output to determine where you want your starting
+# indices to be. Also, make sure that AC_HEAD, LEG_TIME, and AC_ALT all have the same 
+# number of elements. If you are flying a 1-leg straight line, just enter 0 as the first index for
+# LEG_TIME. Your first two output locations will be the same, so you can use the 2nd and 3rd
+# output entries as your waypoints.
+
+TOTAL_TIME=180
+
+MODEL_DX=500
+
+START_X=600
+
+START_Y=690
+
+START_ALT=1000
+
+#AC_HEAD=(50 50 33 15 0)
+AC_HEAD=(50 50)
+
+#LEG_TIME=(0 860 30 60 210)
+LEG_TIME=(0 180)
+
+#AC_ALT=(1000 1000 1000 1000 1000)
+AC_ALT=(1000 1000)
+
+AC_SPEED=120

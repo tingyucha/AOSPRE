@@ -1,0 +1,21 @@
+site_name: APAR Observing Simulator Documentation
+site_url: https://example.com
+
+nav:
+  - Home: index.md
+#   - About: about.md
+  - Preliminaries and Prerequsites: preliminaries.md
+#   - Processing: processing.md
+  - Build the AOS executable from source: building.md
+  - Acquire the CR-SIM tables: acquiretables.md
+  - Run the test case: testcase.md
+  - Running your own case: running.md
+  - Namelist: namelist.md
+  - Scanning table library: scanning_table_library.md
+  - References: references.md
+# theme: mkdocs
+theme: readthedocs
+# theme: material
+# theme: cinder
+# theme: windmill
+# theme: custommill

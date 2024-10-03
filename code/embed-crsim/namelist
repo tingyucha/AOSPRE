@@ -1,0 +1,37 @@
+&options
+
+ output_filename_format_string = '("supercell_",I6.6,".nc")'
+ wrf_glob_pattern   = "/mmmtmp/kmanning/APAR/WRF_supercell_250m/wrfout_d01_0001-01-01_01:15:00",
+ leg_time_seconds = 600
+
+ flight_waypoints_x    =    150,    350,  350,
+ flight_waypoints_y    =    150,    150,  350, 
+ flight_waypoints_vert =  5000,  5000,   5000,
+ flight_level_coordinate   = "Z"
+
+ air_speed = 120. ! meters per second
+ herky_jerky = .FALSE.
+/
+
+&attitude_external_source
+  use_external_attitudes = .False.,
+  attitude_file = "attitude.nc",
+  attitude_orientation_rotate_degrees = 182.0,
+/
+
+&scanning
+ scanning_table = "Scanning_Table_Multiplexing_Fast_RHI"
+ pulse_repetition_frequency     = 2000
+ pulses_per_pulse_set           = 2
+ revisits_per_acquisition_time  = 7
+ beams_per_acquisition_time     = 3
+
+ meters_between_gates           = 150.
+ meters_to_center_of_first_gate = 150.
+ max_range_in_meters            = 75000.
+ fold_limit_lower               = -16.905
+ fold_limit_upper               =  16.905
+/
+
+&config_output
+/
