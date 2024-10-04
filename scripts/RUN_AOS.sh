@@ -81,7 +81,7 @@ test_dir="supercell_100m_10s_1kmAGL_Cband_2.0BW_x215_y315_4490-5090s_FVEL"
 if [ ! -z "$experiment_dir" ]; then
    
    if [ ! -d ${output_base_dir}/${experiment_dir} ]; then
-      mkdir -p ${base_dir}/${experiment_dir}
+      mkdir -p ${output_base_dir}/${experiment_dir}
    fi
 
    output_dir=${output_base_dir}/${experiment_dir}/${test_dir}
