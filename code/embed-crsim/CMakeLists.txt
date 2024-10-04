@@ -31,6 +31,11 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 
 target_compile_options(${PROJECT_NAME} PRIVATE $<$<Fortran_COMPILER_ID:GNU>:-ffree-line-length-none>)
 
+# MacOS specific flags to prevent an "Illegal instruction" error from occurring.
+# TODO: Investigate why this is necessary.
+set_property(SOURCE "extract_apar_wrf.F" PROPERTY COMPILE_FLAGS $<$<PLATFORM_ID:Darwin>:"-Og">)
+set_property(SOURCE "extract_apar_wrf.F" PROPERTY COMPILE_FLAGS $<$<PLATFORM_ID:Darwin>:"-ftree-sra">)
+
 find_package(NetCDF REQUIRED COMPONENTS Fortran)
 target_link_libraries(${PROJECT_NAME} PRIVATE NetCDF::NetCDF_Fortran NetCDF::NetCDF_C)
 
