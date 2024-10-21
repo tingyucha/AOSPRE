@@ -1,8 +1,8 @@
 ---
-title: About AOS
+title: About AOSPRE
 ---
 
-# AOS
+# AOSPRE
 
-AOS is developed at the National Science Foundation National Center for Atmospheric Research.
+AOSPRE is developed at the National Science Foundation National Center for Atmospheric Research.
 ... etc.
