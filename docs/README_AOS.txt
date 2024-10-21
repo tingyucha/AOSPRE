@@ -1,17 +1,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                     %
-% README for the NCAR EOL APAR Observation Simulation (AOS) system    %
+% README for the NCAR EOL APAR Observation Simulation, Processing,    %
+% and Research Environment (AOSPRE)                                   %
 %                                                                     %
 % The purpose of this document is to describe the process of running  %
-% AOS system. This process includes installation of all appropriate   %
-% libraries needed to run the code, designing flight tracks, ensuring %
-% you have the correct model output, and visualizing the AOS output.  %
+% AOSPRE system. This process includes installation of all            %
+% appropriate libraries needed to run the code, designing             %
+% flight tracks, ensuring you have the correct model output, and      %
+% visualizing the AOSPRE output.                                      %
 %                                                                     %
-% AOS creators: Kevin Manning and Scott Ellis                         %
-% AOS contributors: Brad Klotz and George Bryan                       %
+% AOSPRE creators: Kevin Manning and Scott Ellis                      %
+% AOSPRE contributors: Brad Klotz and George Bryan                    %
 % Scientific Lead: Wen-Chau Lee                                       %
 %                                                                     %
-% Document version: 1.0.1                                               %
+% Document version: 1.0.1                                             %
 % Date:             04/02/2021                                        %
 % Author:           Brad Klotz                                        %
 % Contact:          bradklotz@ucar.edu                                %
@@ -27,16 +29,16 @@
 
 %%%% README Contents %%%%
 
-1) AOS Purpose
+1) AOSPRE Purpose
 2) Pre-Install checklist
 3) Installation instructions
-4) Running the AOS
-5) Visualizing AOS output                             
+4) Running the AOSPRE
+5) Visualizing AOSPRE output                             
 
 
-%%%% 1) AOS Purpose %%%%
+%%%% 1) AOSPRE Purpose %%%%
 
-The intent of the AOS system is to provide a glimpse of the APAR
+The intent of the AOSPRE system is to provide a glimpse of the APAR
 observations in the context of certain weather phenomena. It is 
 promoted as a risk reduction tool and for investigative purposes to
 determine limits of the APAR and appropriate scan strategies prior
@@ -47,8 +49,8 @@ while providing some restraint for known operational guidelines.
 
 %%%% 2) Pre-install Checklist %%%%
 
-The main AOS code is setup in a Github repository with specific instructions
-for downloading, building, testing, and usage. The build and operation of the AOS
+The main AOSPRE code is setup in a Github repository with specific instructions
+for downloading, building, testing, and usage. The build and operation of the AOSPRE
 set to run on Linux/Unix systems. The current version has been successfully tested 
 on is CentOS Stream release 8, 4.18.0-277.el8.x86_64, AlmaLinux 8.10 (Cerulean Leopard), 
 and MacOS Ventura, Version 13.6.9.
@@ -65,7 +67,7 @@ MacOS has a hard cap on the stack size. The command thus changes
 to ulimit -s 65520. With this in mind, it might be beneficial to
 for MacOS to run cases that do not require much memory.
 
-The AOS runs in a bash shell using Fortran as its main programming
+The AOSPRE runs in a bash shell using Fortran as its main programming
 language. Ensure that you have the GNU Fortran compiler installed.
 For Linux, this should be installed automatically, but its always good
 to check. If you have admin privileges, you can check by typing:
@@ -74,18 +76,18 @@ yum install gcc-gfortran
 
 The third requirement is a dependency on a third-party software called
 the Cloud Resolving Model Radar Simulator (CR-SIM). There are look-up
-tables (LUTS) in the software that are required for AOS. To download, go
+tables (LUTS) in the software that are required for AOSPRE. To download, go
 to: https://you.stonybrook.edu/radar/research/radar-simulators/. Once you
-have installed CR-SIM, you can link the "aux" directory to your AOS code
+have installed CR-SIM, you can link the "aux" directory to your AOSPRE code
 directory. This will be discussed in a little more detail later in this
 document.
 
-The last pre-requisite to run the AOS system is WRF or CM1 model output.
+The last pre-requisite to run the AOSPRE system is WRF or CM1 model output.
 The functions are expecting certain variables, so a list of these are
 provided in a separate document called: WRF_VARIABLES.txt. It is 
 effectively an "ncdump" of the variables in one example output file
-used in the AOS testing. If your model output has at least all of 
-these variables, it should be able to run in the AOS system. 
+used in the AOSPRE testing. If your model output has at least all of 
+these variables, it should be able to run in the AOSPRE system. 
 
 An optional component of this software is to run with parallel
 computing resources. It is currently set up to use OpenMPI. If
@@ -117,12 +119,12 @@ The structure of the repository is such that all of the source Fortran
 code is stored in the directory is "code/embed-crsim". It contains all the functions
 to run the main portion of the code and generate output files. The first expectation
 is that the user links the lookup tables from CR-SIM for access by the 
-AOS main code. To do this from the main AOS directory, locate the "aux"
+AOSPRE main code. To do this from the main AOSPRE directory, locate the "aux"
 directory from the CR-SIM installation: 
 
 crsim/src/crsim-{version}/share/crsim/aux
 
-Then link it to the current AOS main directory:
+Then link it to the current AOSPRE main directory:
 
 ln -s crsim/src/crsim-{version}/share/crsim/aux
 
@@ -140,12 +142,12 @@ make all
 
 Barring any compilation errors, this will clean any old versions and 
 reinstall all the scripts with the correct library locations. The executable
-is called a.out. You are now able to run the AOS code!
+is called a.out. You are now able to run the AOSPRE code!
 
 
-%%%% 4) Running the AOS %%%%
+%%%% 4) Running the AOSPRE %%%%
 
-Before you can run the AOS, there are four things you must do. These
+Before you can run the AOSPRE, there are four things you must do. These
 include verifying the CONFIG file, determining your flight path,
 updating your namelist file, and defining a scan file. 
 
@@ -202,7 +204,7 @@ initial starting location and time. The waypoints are defined in terms
 of model grid index (x,y). To get the waypoints, type ./flight_planner.sh,
 and copy the output to your namelist file.
 
-e) Once you have these files set up, you can run the AOS. The typical
+e) Once you have these files set up, you can run the AOSPRE. The typical
 procedure is create a directory for running tests associated with a 
 particular weather simulation in the main directory, such as "run_tests/storm1".
 Make sure all your necessaryfiles are in that directory, including CONFIG, 
@@ -211,7 +213,7 @@ but can be moved to a more appropriate location. The expectation is that the use
 could use this storm directory as a based for running different flights
 for the same simulation.
 
-AOS output are in NetCDF format. A file called flightpath.ascii is also
+AOSPRE output are in NetCDF format. A file called flightpath.ascii is also
 output as the aircraft flight tracker during the simulated flight.
 
 To invoke the code, you should be in your output directory, and then
@@ -221,7 +223,7 @@ If running with parallel processing, type:
 mpirun -n N ../code/embed-crsim/a.out <namelist>
 
 
-%%%% Visualizing the AOS output %%%%
+%%%% Visualizing the AOSPRE output %%%%
 
 There are options to visualize the data with 3rd party tools,  including
 ncview, LROSE, or other tools. An existing set of Matlab-based scripts
