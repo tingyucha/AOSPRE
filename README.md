@@ -12,7 +12,7 @@ For instructions on acquiring and building the AOS code, see the ["Build the AOS
 
 ## Testing
 
-For instructions on testing the AOS executable with some sample data, see the ["Run the test case"](docs/testing.md) documentation page.
+For instructions on testing the AOS executable with some sample data, see the ["Run the test case"](docs/testcase.md) documentation page.
 
 ## Run your own experiments with your own model output
 
