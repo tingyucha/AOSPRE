@@ -1,12 +1,13 @@
 #!/bin/bash
 
-# RUN_AOS_test.sh
+# RUN_AOSPRE_test.sh
 #
 # Brad Klotz, NCAR Project Scientist
 # Created: 06/16/2021
 # Modified: 11/15/2022 - for testing with the parallel computing mode
 
-# This program  will initiate the APAR Observing Simulation (AOS)
+# This program  will initiate the APAR Observing Simulation,
+# Processing, and Research Environment (AOSPRE)
 # system code. You will need to specify a few items in order to complete the
 # code requirements. You will need to configure your namelist
 # file prior to running this script for now. That functionality
@@ -18,7 +19,7 @@
 # test directory, and output directory.
 
 # Recommended script execution - creates a log file and runs in the background
-# ./RUN_AOS.sh fpar ftime > out_aos.log &
+# ./RUN_AOSPRE_test.sh fpar ftime > out_aospre.log &
 #
 # Even though the <fpar> and <ftime> variables are listed elsewhere, they need to be included
 # in the command as well. So <fpar> indicates whether you want to run parallel or not and <ftime>
@@ -29,15 +30,15 @@
 #
 # Other entries of interest
 #
-# Base Directory: This should be your main AOS directory you've created
-#                 example: /export/wind1/bradklotz/AOS
+# Base Directory: This should be your main AOSPRE directory you've created
+#                 example: /export/wind1/bradklotz/AOSPRE
 #
 # Operating Directory: This is the directory containing your namelist and config files
 #                 example: ${basedir}/code/WRF_supercell_100m
 #
 # Scan Mode: This is simply the type of scan - surveillance or rhi
 #
-# Namelist file: This is the file that controls the functionality of the AOS code
+# Namelist file: This is the file that controls the functionality of the AOSPRE code
 #                 example: namelist.surveillance
 #
 # Experiment Directory: If you are performing several runs as part of a larger
@@ -47,7 +48,7 @@
 #
 # Test Directory: This is the name of the test-specific directory you
 #                 want to create. It will typically have information about the
-#		  particular AOS run you are executing.
+#		  particular AOSPRE run you are executing.
 #		  example: supercell_100m_10s_Cband_1kmAGL
 #
 # Output Directory: This is the combined strings of the Base Directory, the
@@ -58,7 +59,7 @@
 ##### USER-DEFINED VARIABLES #####
 
 # Base directory
-base_dir="/export/wind1/bradklotz/AOS"
+base_dir="/export/wind1/bradklotz/AOSPRE"
 
 # Operating directory
 operating_dir=${base_dir}/code/WRF_supercell_100m
@@ -86,7 +87,7 @@ exp_res=500
 
 # Test directory
 # This will typically provide some specific information
-# about your run of the AOS - such as the storm type, resolution
+# about your run of the AOSPRE - such as the storm type, resolution
 # aircraft initial height, microwave band, etc.
 #test_dir="supercell_100m_10s_1kmAGL_Cband_2.0BW_x215_y605_4490-5090s_FVEL_Aft360_test_v1_TDR"
 #test_dir="supercell_100m_10s_0.05kmAGL_Cband_2.0BW_x215_y375_4490-4580s_FVEL_3.0deg"
@@ -136,7 +137,7 @@ fi
 # Get your current working directory
 current_dir=$(pwd)
 
-echo "Running the AOS code..."
+echo "Running the AOSPRE code..."
 echo "Your current working directory is: " ${current_dir}
 echo "Your operating directory is: " ${operating_dir}
 echo "Your scan mode is: " ${scan_mode}
@@ -145,7 +146,7 @@ echo "Your output directory is: " ${output_dir}
 
 ##### END USER VARIABLES #####
 
-##### EXECUTION OF AOS CODE #####
+##### EXECUTION OF AOSPRE CODE #####
 
 # Verifying the base and operating directories  exist
 if [[ ! -d ${base_dir} || -z "$base_dir" ]]; then
@@ -162,7 +163,7 @@ fi
 
 # Create the output directory if it doesn't exist
 echo ""
-echo "All specified directories are verified...Proceeding with AOS execution..."
+echo "All specified directories are verified...Proceeding with AOSPRE execution..."
 
 if [ ! -d ${output_dir} ]; then
 	   mkdir ${output_dir}
@@ -176,7 +177,7 @@ cd ${operating_dir}
 echo ""
 echo "Command line entries: (par1, flighttime)   $1 $2"
 
-# Get the starting date and time of the AOS run
+# Get the starting date and time of the AOSPRE run
 start_time=`date +%s.%N`
 
 # Pull some information out of the namelist file?
@@ -194,7 +195,7 @@ else
     max_procs=7;
 fi
 
-#echo "Do you need to run the AOS in parallel? (1=yes,0=no): "
+#echo "Do you need to run the AOSPRE in parallel? (1=yes,0=no): "
 par1=$1
 
 if [ $par1 -eq 0 ]; then
@@ -247,19 +248,19 @@ echo ""
 runver=0
 if ! command -v mpirun &> /dev/null
 then
-   echo "mpirun does not exist on this computer...running AOS in the traditional manner..."
+   echo "mpirun does not exist on this computer...running AOSPRE in the traditional manner..."
    echo ""
    runver=1
 fi
 
 # Execute the code
 echo ""
-echo "Initiating AOS code..."
+echo "Initiating AOSPRE code..."
 echo ""
 echo "And off we go..."
 echo ""
 echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
-echo "%%        AOS SPECIFIC OUTPUT BEGINS        %%"
+echo "%%      AOSPRE SPECIFIC OUTPUT BEGINS       %%"
 echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 
 if [ ${runver} -eq 1 ]; then
@@ -271,16 +272,16 @@ fi
 
 echo ""
 echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
-echo "%%         AOS SPECIFIC OUTPUT ENDS         %%"
+echo "%%       AOSPRE SPECIFIC OUTPUT ENDS        %%"
 echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 
-# Get the end date and time of the AOS run
+# Get the end date and time of the AOSPRE run
 end_time=`date +%s.%N`
 
 runtime=$( echo "$end_time - $start_time" | bc -l )
 
 echo ""
-echo "AOS processing time = ${runtime} seconds"
+echo "AOSPRE processing time = ${runtime} seconds"
 
 # Create a new flightpath file from the multiple thread file version
 numfp=`ls -1 flightpath_* | wc -l`
@@ -333,6 +334,6 @@ echo "Returning to your original working directory: " ${current_dir}
 cd ${current_dir}
 
 echo ""
-echo "AOS code execution is complete...Done!"
+echo "AOSPRE code execution is complete...Done!"
 
 
