@@ -1,26 +1,26 @@
-# Build the AOS executable from source
+# Build the AOSPRE executable from source
 
 ## Prerequisites
 
-> For important considerations before trying to build AOS, please see
+> For important considerations before trying to build AOSPRE, please see
   the ["Preliminaries and Prerequisites"](preliminaries.md)
   documentation page.
 
-## Download AOS code
+## Download AOSPRE code
 
-> ### Clone the AOS github repository
+> ### Clone the AOSPRE github repository
 
 > > The source code for the APAR Observing Simulator may be acquired by cloning the github reposoitory:
 > >
-> > <code>git clone https://github.com/NCAR/APAR-Observing-Simulator.git</code>
+> > <code>git clone https://github.com/NCAR/AOSPRE.git</code>
 > >
 > > this creates local directory
-<nobr><i>APAR-Observing-Simulator</i></nobr>.  The source code is
+<nobr><i>AOSPRE</i></nobr>.  The source code is
 found in directory
-<nobr><i>APAR-Observing-Simulator/code/embed-crsim</i></nobr>.  The
+<nobr><i>AOSPRE/code/embed-crsim</i></nobr>.  The
 code is written in Fortran.
 
-> ### (alternate) Download and unpack an AOS tarball.
+> ### (alternate) Download and unpack an AOSPRE tarball.
 
 > > [download tgz file and untar]
 
@@ -30,9 +30,9 @@ After downloading the code via <code>git clone</code> as above, and
 insuring that required prerequisites are installed, change your
 working directory to the source code directory:
 
-<code>cd APAR-Observing-Simulator/code/embed-crsim</code>
+<code>cd AOSPRE/code/embed-crsim</code>
 
-This directory contains the Fortran source code for AOS.  In addition,
+This directory contains the Fortran source code for AOSPRE.  In addition,
 the file _Makefile_ has instructions for the _make_ utility to compile
 the source code.
 
@@ -145,6 +145,6 @@ customized for your particular computing environment:
 > ### to clean the build directory
 
 >> Invoking <code>make clean</code> removes all compiled code,
-   including object files, Fortran module files, and the AOS
+   including object files, Fortran module files, and the AOSPRE
    executable.  This may be useful if the compiler has changed, or if
    there were errors in a previous attempt to build the code.
