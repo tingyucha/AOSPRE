@@ -4,20 +4,20 @@ A small case has been set up for a quick and simple test run. Input files,
 configuration files, and namelists have all been set up for this test
 case.
 
-From the top-level <code><nobr>APAR-Observing-Simulator</nobr></code>
+From the top-level <code><nobr>AOSPRE</nobr></code>
 directory, move to the working directory for the test case:
 
 > <code>cd test</code>
 
 This directory will be your working directory for running the test case.
 
-Several components are required for a successful run of AOS.  All of
+Several components are required for a successful run of AOSPRE.  All of
 these components have been prepared in a simple configuration for this
 test case.  Do a listing of the current working directory:
 
 > <code>ls -l</code>
 
-The various files required for a run of AOS are described below.
+The various files required for a run of AOSPRE are described below.
 
 ## WRF-formatted model output files
 
@@ -41,7 +41,7 @@ meteorological fields in these files.
 
 ## Scanning tables
 
-AOS relies on user-provided scanning tables to define the beams and
+AOSPRE relies on user-provided scanning tables to define the beams and
 sweeps that will be used to sample the atmospheric state as
 represented in the model output files.  For this example, these files are:
 
@@ -62,19 +62,19 @@ perpendicular to the direction of flight.
 
 ## CR-SIM configuration table
 
-The components of CR-SIM used by AOS use a configuration file to
+The components of CR-SIM used by AOSPRE use a configuration file to
 specify characteristics of the simulated radar.  This configuration file is:
 
 > <code>CONFIG_crsim</code>
 
 Details of the CR-SIM configuration may be found in the CR-SIM
 documentation.  Note that only certain entries in this configuration
-setup are used by AOS; the entries related to radar position, lidar,
-Micropulse lidar (MPL) and postprocessing are not used by AOS.
+setup are used by AOSPRE; the entries related to radar position, lidar,
+Micropulse lidar (MPL) and postprocessing are not used by AOSPRE.
 
-## AOS namelist files
+## AOSPRE namelist files
 
-AOS processing is controlled by one or more Fortran namelist files:
+AOSPRE processing is controlled by one or more Fortran namelist files:
 
 > <code>namelist.BOT</code><br>
 > <code>namelist.LHS</code><br>
@@ -84,13 +84,13 @@ AOS processing is controlled by one or more Fortran namelist files:
 Where the bottom, left-hand side, right-hand side, and top panels each have their own namelist files.
 
 The namelist files specify the flight path and radar scanning strategy
-for a flight, and the input and output files for the AOS processing..
+for a flight, and the input and output files for the AOSPRE processing..
 See the [namelist documentation](namelist.md) for details of the
 namelist entries.  Several of the critical namelist entries are described below:
 
 ### wrf_glob_pattern
 
-> The <code>wrf_glob_pattern</code> entry defines how AOS finds the
+> The <code>wrf_glob_pattern</code> entry defines how AOSPRE finds the
   atmospheric model output files.  Any file matching the glob pattern
   (using standard wildcard matching where '?' matches any single
   character and '*' matches any number of characters) will be
@@ -101,7 +101,7 @@ namelist entries.  Several of the critical namelist entries are described below:
 ### output_filename_format_string
 
 > The <code>output_filename_format_string</code> determines how the
-  CfRadial-formatted files produced by AOS will be named.  This entry
+  CfRadial-formatted files produced by AOSPRE will be named.  This entry
   must specify a Fortran format string with exactly two 'A' format
   specifiers, used to build output file names.  The 'A' format
   specifiers will resolve to the beginning and ending time of the
@@ -144,7 +144,7 @@ namelist entries.  Several of the critical namelist entries are described below:
   flight is set up to move from west to east at y=105, south of the
   main body of the storm, at 2000 meters above sea level.
 
-> When running AOS with for multiple APAR panels, the namelists for
+> When running AOSPRE with for multiple APAR panels, the namelists for
   each panel must be set up with the same flight path and flight time
   information.
 
@@ -161,10 +161,10 @@ namelist entries.  Several of the critical namelist entries are described below:
   <code><nobr>scanning_table</nobr></code> entries for the four
   namelists provided.
 
-## Run the AOS program
+## Run the AOSPRE program
 
-The AOS executable takes as command-line arguments the names of one or
-more namelist files.  As a first run of AOS, invoke a flight using the
+The AOSPRE executable takes as command-line arguments the names of one or
+more namelist files.  As a first run of AOSPRE, invoke a flight using the
 original namelist settings, with only the left-hand side panel
 active:
 
@@ -220,7 +220,7 @@ And do a repeat flight with the right panel:
 Note the additional RHS CfRadial files produced by this second run.
 
 You can also run multiple APAR panels in the same run, by specifying
-multiple namelists on as command-line arguments to the AOS executable.
+multiple namelists on as command-line arguments to the AOSPRE executable.
 
 E.g., try:
 
@@ -239,8 +239,8 @@ and note the output generated.
 ## Further exploration
 
 As noted before, the minimal WRF output dataset allows only limited
-AOS runs.  But there are a variety of runs you can do to further
-explore the data or familiarize yourself with AOS configuration.  E.g.:
+AOSPRE runs.  But there are a variety of runs you can do to further
+explore the data or familiarize yourself with AOSPRE configuration.  E.g.:
 
 <ul>
 <li>Try setting up flights north of the storm.
