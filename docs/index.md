@@ -1,12 +1,12 @@
-# APAR Observing Simulator (AOS)
+# APAR Observing Simulation, Processing, and Research Environment (AOSPRE)
 
-The <b>APAR Observing Simulator (AOS)</b> is intended create data sets
-that simulate results from flights of the <b>Airborne Phased Array
-Radar (APAR)</b> observing platform.  AOS relies on high-resolution
-simulations of real or idealized weather events as provided by, e.g.,
-the <b>Weather Research and Forecasting Model</b> (WRF; Skamarock
+The <b>APAR Observing Simulation, Processing, and Research Environment (AOSPRE)</b> 
+is intended create data sets that simulate results from flights of the 
+<b>Airborne Phased Array Radar (APAR)</b> observing platform.  AOSPRE relies 
+on high-resolution simulations of real or idealized weather events as provided 
+by, e.g., the <b>Weather Research and Forecasting Model</b> (WRF; Skamarock
 et. al., 2019) or the <b>Cloud Model version 1</b> (CM1; Bryan and
-Morrison, 2012).  AOS takes a user-specified flight plan through such
+Morrison, 2012).  AOSPRE takes a user-specified flight plan through such
 atmospheric simulations, together with radar scanning instructions
 (e.g., series of rotation and tilt angles), to determine which
 portions of the atmosphere APAR pulses might "see" during such a
@@ -14,11 +14,11 @@ flight.  Details of the thermodynamical and microphysical fields at
 these locations are extracted from the model output, and passed to
 routines from the <b>Cloud-resolving Radar Simulator</b> (CR-SIM; Oue
 et al., 2020).  The CR-SIM routines compute various radar moments
-(reflectivity, radial velocity, etc.) from this model data, and AOS
+(reflectivity, radial velocity, etc.) from this model data, and AOSPRE
 writes these results in the <b>CfRadial File Format</b> (Dixon and
 Lee, 2016).
 
-The goals of AOS include:
+The goals of AOSPRE include:
 <ul>
 <li>providing researchers with realistic
 (though simulated) data sets as an aid to planning APAR flight
@@ -28,11 +28,11 @@ useful for testing and developing APAR software processing tools.</li>
 <li> ... <i>etc.</i>
 </ul>
 
-The atmospheric models used as input to AOS should ideally be run at
+The atmospheric models used as input to AOSPRE should ideally be run at
 resolutions and output time frequencies that are comparable to the
 spatial and temporal scales of radar observations.  In practice,
 simulations with grid spacing of 100 to 1000 m, and time output of a
-few seconds to a minute, are probably the resolutions at which AOS is
+few seconds to a minute, are probably the resolutions at which AOSPRE is
 expected to be applied.
 
 ## <h3>APAR</h3>
@@ -47,7 +47,7 @@ CR-SIM at <a
 href=https://you.stonybrook.edu/radar/research/radar-simulators>you.stonybrook.edu/radar/research/radar-simulators</a>.
 
 <!--
-The AOS uses a radar simulator known as the Cloud-resolving Radar
+The AOSPRE uses a radar simulator known as the Cloud-resolving Radar
 Simulator (CR-SIM, Oue et al. 2020), which was developed by
 researchers at one of NSF NCAR’s partner institutes, SUNY Stony Brook.
 -->
