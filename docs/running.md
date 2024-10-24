@@ -1,6 +1,6 @@
 # Configuration
 
-A number of configuration steps are required before running AOS.
+A number of configuration steps are required before running AOSPRE.
 These steps are outlined below.  It may be helpful also to review the
 the ["Preliminaries and Prerequisites"](preliminaries.md)
 documentation page.
@@ -10,15 +10,15 @@ documentation page.
 ## Collect weather model output files
 
 It is up to the user to either produce their own model simulation
-output or obtain output from another source. Without it, the AOS
+output or obtain output from another source. Without it, the AOSPRE
 cannot run. It is recommended to use a model output grid spacing no
 larger than 1 km, as higher resolutions are better able to represent
-atmospheric features and variability at the scales needed for AOS to
+atmospheric features and variability at the scales needed for AOSPRE to
 produce realistic simulated radar scans.
 
 Make sure the model output files are in a location accessible from the
-AOS run directory (i.e., not on a remote server).  The files will be
-found at runtime by AOS using the "wrf_glob_pattern"
+AOSPRE run directory (i.e., not on a remote server).  The files will be
+found at runtime by AOSPRE using the "wrf_glob_pattern"
 [namelist](namelist.md) option.  Check to to see that the
 "wrf_glob_pattern" option will find the desired model output files.
 
@@ -36,12 +36,12 @@ option.  The flight path is traversed by straight line paths between
 successive (x,y,z) coordinates.
 
 Designing a flight plan can be one of the more difficult parts of
-using AOS.  Users may find the ncview utility useful for examining the
+using AOSPRE.  Users may find the ncview utility useful for examining the
 NWP simulation files and finding gridpoint coordinates at appropriate
 times and locations.  The "flight_planner" shell script (in the
 "scripts" directory) might also be useful.
 
-Once a flight plan is designed, users may want to run AOS in a mode to
+Once a flight plan is designed, users may want to run AOSPRE in a mode to
 create a few surveillance PPI scans along the flight path, and use
 these scans to verify that the flight plan is suitable for sampling
 the regions of interest in the NWP simulation, before running more
@@ -52,16 +52,16 @@ extensive and compute-intensive flights and scanning strategies.
 ## Configure CR-SIM options
 
 CR-SIM options are configured in the CR-SIM configuration file.  The
-file name for the CR-SIM configuration file is referenced in the AOS
+file name for the CR-SIM configuration file is referenced in the AOSPRE
 "CRSIM_Config" [namelist](namelist.md) option.
 
 Only specific settings in the CR-SIM configuration file are used by
-AOS.
+AOSPRE.
 
 #########################################################################
 
 
-## Configure AOS namelist
+## Configure AOSPRE namelist
 
 * See ["Namelist"](namelist.md) documentation page.
 
@@ -75,7 +75,7 @@ AOS.
 
 ## Configure scanning tables
 
-AOS scanning tables are organized in a two-column format text file and
+AOSPRE scanning tables are organized in a two-column format text file and
 contain information about the primary axis of rotation, sweep mode,
 and the information contained in each column (i.e., rotation and tilt
 angles). The basic scan files use Z as the primary axis of rotation
@@ -94,7 +94,7 @@ Sample scanning tables include:
 * Scanning_Table_LHS_Multiplexing_RHI_Zprime_ordered (for left panel RHI)
 * Scanning_Table_RHS_Multiplexing_RHI_Zprime_ordered (for right panel RHI)
 
-The scanning table file name is referenced in the AOS namelist.
+The scanning table file name is referenced in the AOSPRE namelist.
 
 #########################################################################
 
