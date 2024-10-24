@@ -4,6 +4,6 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/"
     CACHE INTERNAL "Location of our custom CMake modules.")
 set(CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-project(AOS)
+project(AOSPRE)
 
 add_subdirectory(code)
