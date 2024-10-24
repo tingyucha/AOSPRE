@@ -1,8 +1,8 @@
-project(AOS)
+project(aospre)
 cmake_minimum_required(VERSION 3.0)
 enable_language(Fortran)
 
-option(PARALLEL_AOS "Enable parallel AOS" OFF)
+option(PARALLEL_AOSPRE "Enable parallel AOSPRE" OFF)
 
 add_executable(${PROJECT_NAME}
     crsim_luts_mod.F
@@ -39,8 +39,8 @@ set_property(SOURCE "extract_apar_wrf.F" PROPERTY COMPILE_FLAGS $<$<PLATFORM_ID:
 find_package(NetCDF REQUIRED COMPONENTS Fortran)
 target_link_libraries(${PROJECT_NAME} PRIVATE NetCDF::NetCDF_Fortran NetCDF::NetCDF_C)
 
-message(STATUS "Parallel AOS: ${PARALLEL_AOS}")
-if(PARALLEL_AOS)
+message(STATUS "Parallel AOSPRE: ${PARALLEL_AOSPRE}")
+if(PARALLEL_AOSPRE)
     if(NOT MPI_HOME AND NOT ENV{MPI_HOME})
         find_path(MPI_HOME "bin/mpiexec" PATH_SUFFIXES mpich openmpi PATHS /usr/lib /usr/lib64)
     endif()
