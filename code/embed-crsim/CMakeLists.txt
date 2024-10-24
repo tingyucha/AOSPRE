@@ -49,6 +49,15 @@ if(PARALLEL_AOSPRE)
         COMPONENTS
             Fortran
     )
+
+    # gfortran 10+ is more strict on argument mismatches which causes MPI versions earlier than 4 to throw an error
+    # an argument mismatch. Add the '-fallow-argument-mismatch' flag to turn that into a warning.
+    set(is_gnu "$<Fortran_COMPILER_ID:GNU>")
+    set(fortran_v10_or_later "$<VERSION_GREATER_EQUAL:$<Fortran_COMPILER_VERSION>,10>")
+    set(mpi_earlier_than_v4 "$<VERSION_LESS:${MPI_Fortran_VERSION_MAJOR},4>")
+    set(meets_requirements "$<AND:${is_gnu},${fortran_v10_or_later},${mpi_earlier_than_v4}>")
+    set_property(SOURCE "extract_apar_wrf.F" PROPERTY COMPILE_FLAGS $<${meets_requirements}:-fallow-argument-mismatch>)
+
     target_link_libraries(${PROJECT_NAME} PRIVATE MPI::MPI_Fortran)
     target_compile_definitions(${PROJECT_NAME} PRIVATE _PARALLEL_)
 endif()
