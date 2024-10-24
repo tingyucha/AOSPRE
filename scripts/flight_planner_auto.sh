@@ -2,7 +2,7 @@
 
 # flight_planner_auto.sh
 # This script allows the user to assign waypoints for flight planning in 
-# the NCAR/EOL AOS software. Please use flight_config to set up your desired
+# the NCAR/EOL AOSPRE software. Please use flight_config to set up your desired
 # leg specifications. Instructions for different assignments are in that config
 # file.
 
