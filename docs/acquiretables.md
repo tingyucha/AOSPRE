@@ -9,7 +9,7 @@ Download the full software package.
 ## Download the CR-SIM software package
 
 The recommendation is to move to the top level
-<code></nobr>APAR-Observing-Simulator/</nobr></code> directory, and download the CR-SIM package
+<code></nobr>AOSPRE/</nobr></code> directory, and download the CR-SIM package
 into this directory.  The download file is a compressed tar file more
 than 12GB in size.  The file will be named according to the version of CR-SIM downloaded:  <code><nobr>crsim-<<i>version</i>>.tar.gz</nobr></code>.
 
@@ -34,7 +34,7 @@ The CR-SIM tables are located in directory
 When AOSPRE runs, it assumes it will find tables under a directory called <code>aux/</code> immediately
 above the working directory.  Further examples in this documentation
 assume that execution of AOSPRE will occur in a working directory under
-the top-level <code><nobr>APAR-Observing-Simulator/</nobr></code> directory.  For this reason,
+the top-level <code><nobr>AOSPRE/</nobr></code> directory.  For this reason,
 it is recommended to create a soft link in this top-level directory to
 the <code>aux/</code> tables directory:
 
