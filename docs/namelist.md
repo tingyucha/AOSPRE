@@ -1,6 +1,6 @@
 #**Namelist file**
 
-Fortran namelist to control aspects of the AOS simulation.  Organized in sections [&options](#options), [&scanning](#scanning), and [&config_output](#config_output), each representing a Fortran *namelist record*.
+Fortran namelist to control aspects of the AOSPRE simulation.  Organized in sections [&options](#options), [&scanning](#scanning), and [&config_output](#config_output), each representing a Fortran *namelist record*.
 
 ## &options
 
