@@ -3,29 +3,29 @@
 # run_flight_planner.sh
 # This script is the parent script to flight_planner_auto.sh
 # It asks the user to input some information regarding the
-# AOS flight track, computes the track information, and passes
+# AOSPRE flight track, computes the track information, and passes
 # the information to the namelist file of interest.
 #
 # This script assumes that you have the following directory
 # structure set up:
 # main directory --> model output directory
-# main directory --> AOS directory
-# main directory --> AOS directory --> code directory
-# main directory --> AOS directory --> code directory --> AOS processing directory
+# main directory --> AOSPRE directory
+# main directory --> AOSPRE directory --> code directory
+# main directory --> AOSPRE directory --> code directory --> AOSPRE processing directory
 
-echo "***********************************************************"
-echo "** You are running run_flight_planner.sh. It is designed **"
-echo "** to help you plan your flight path and copy it into a  **"
-echo "** namelist file to be used with the AOS. This script    **"
-echo "** does not run the AOS (yet) as its intent is to make   **"
-echo "** flight track planning a smoother process.             **"
-echo "**                                                       **"
-echo "** IMPORTANT: Make sure you know which directory you are **"
-echo "** initially storing your AOS output and create a file   **"
-echo "** template that can be filled. Examples are located in  **"
-echo "** the main code directory but may require changes based **"
-echo "** on your model output naming and temporal output.      **"
-echo "***********************************************************"
+echo "************************************************************"
+echo "** You are running run_flight_planner.sh. It is designed  **"
+echo "** to help you plan your flight path and copy it into a   **"
+echo "** namelist file to be used with the AOSPRE. This script  **"
+echo "** does not run the AOSPRE (yet) as its intent is to make **"
+echo "** flight track planning a smoother process.              **"
+echo "**                                                        **"
+echo "** IMPORTANT: Make sure you know which directory you are  **"
+echo "** initially storing your AOSPRE output and create a file **"
+echo "** template that can be filled. Examples are located in   **"
+echo "** the main code directory but may require changes based  **"
+echo "** on your model output naming and temporal output.       **"
+echo "************************************************************"
 echo ""
 
 sleep 3
@@ -35,8 +35,8 @@ echo ""
 
 # Set up your directory structure
 maindir="/export/wind1/${USER}"
-aosdir="${maindir}/AOS"
-codedir="${aosdir}/code"
+aospredir="${maindir}/AOSPRE"
+codedir="${aospredir}/code"
 
 cd ${maindir}
 
@@ -68,7 +68,7 @@ fi
 full_modeldir=${maindir}/${modeldir2}
 echo "Model directory set: ${modeldir2}"
 
-# Next, ask the user where their namelist file and AOS output will be store
+# Next, ask the user where their namelist file and AOSPRE output will be store
 
 # Change to this directory
 cd ${codedir}
@@ -85,11 +85,11 @@ while read -r line; do
    dirarr+=(${line})
 done < dirlist.txt
 
-echo "Please enter the directory number where your AOS namelist is stored: "
+echo "Please enter the directory number where your AOSPRE namelist is stored: "
 read processdir
 didx=$(( ${processdir} - 1 ))
 full_processdir=${codedir}/${dirarr[${didx}]}
-echo "AOS processing directory set: ${dirarr[${didx}]}"
+echo "AOSPRE processing directory set: ${dirarr[${didx}]}"
 
 # Ask if the user is creating a new flight track or wants to use an existing one
 echo "Are you creating a new flight track and namelist file (y/n)?: "
@@ -201,7 +201,7 @@ if [ ${newfile} == "y" ]; then
    echo ""
 
 # Change to processing directory
-   echo "Changing to the AOS processing directory:"
+   echo "Changing to the AOSPRE processing directory:"
    echo "${full_processdir}"
 
    cd ${full_processdir}
@@ -284,7 +284,7 @@ else
    echo "Let's load the saved file and copy it to the generic auto file..."
    echo ""
    
-   echo "Redirecting to the AOS processing directory..."
+   echo "Redirecting to the AOSPRE processing directory..."
    cd ${full_processdir}
    
    # List the available saved files
@@ -313,14 +313,14 @@ fi
 echo "Returning to code directory..."
 cd ${codedir}
 
-echo "Now you can run the AOS with your namelist file"
+echo "Now you can run the AOSPRE with your namelist file"
 
-echo "Exporting variables to use with RUN_AOS_auto.sh"
+echo "Exporting variables to use with RUN_AOSPRE_auto.sh"
 echo ""
 
-echo CODEDIR=${codedir} >> ${aosdir}/AOS_env.txt
-echo FULL_PD=${full_processdir} >> ${aosdir}/AOS_env.txt
-echo SCANMODE=${scanmode} >> ${aosdir}/AOS_env.txt
+echo CODEDIR=${codedir} >> ${aospredir}/AOSPRE_env.txt
+echo FULL_PD=${full_processdir} >> ${aospredir}/AOSPRE_env.txt
+echo SCANMODE=${scanmode} >> ${aospredir}/AOSPRE_env.txt
 
 echo "Finished running the flight planning script..."
 echo "Exiting..."
