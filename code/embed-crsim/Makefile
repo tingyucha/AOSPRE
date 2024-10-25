@@ -95,14 +95,14 @@ DEBUG  = 	# -g -C -fbounds-check -O0
 ###############################################################################
 
 RM = 	rm -f
-CMD=	a.out
+CMD=	aospre
 
 # Lines from here on down should not need to be changed.  They are the
 # actual rules which make uses to build $(CMD).
 #
 all:	$(CMD)
 
-a.out:	$(OBJS)
+aospre:	$(OBJS)
 	$(LD) -o $(@) $(OBJS) $(LDLIBS)
 
 .f.o:
