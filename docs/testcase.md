@@ -168,7 +168,7 @@ more namelist files.  As a first run of AOSPRE, invoke a flight using the
 original namelist settings, with only the left-hand side panel
 active:
 
-> <code>../code/embed_crsim/a.out namelist.LHS</code>
+> <code>../code/embed_crsim/aospre namelist.LHS</code>
 
 If you get an immediate segmentation fault, you may need to unlimit
 the stacksize in your terminal session:
@@ -211,11 +211,11 @@ various panels may all see interesting weather.
 
 Rerun the flight with the left panel:
 
-> <code>../code/embed_crsim/a.out namelist.LHS</code>
+> <code>../code/embed_crsim/aospre namelist.LHS</code>
 
 And do a repeat flight with the right panel:
 
-> <code>../code/embed_crsim/a.out namelist.RHS</code>
+> <code>../code/embed_crsim/aospre namelist.RHS</code>
 
 Note the additional RHS CfRadial files produced by this second run.
 
@@ -224,15 +224,15 @@ multiple namelists on as command-line arguments to the AOSPRE executable.
 
 E.g., try:
 
-> <code>../code/embed_crsim/a.out namelist.RHS namelist.LHS</code>
+> <code>../code/embed_crsim/aospre namelist.RHS namelist.LHS</code>
 
 or
 
-> <code>../code/embed_crsim/a.out namelist.BOT namelist.TOP</code>
+> <code>../code/embed_crsim/aospre namelist.BOT namelist.TOP</code>
 
 or
 
-> <code>../code/embed_crsim/a.out namelist.BOT namelist.TOP namelist.LHS namelist.RHS</code>
+> <code>../code/embed_crsim/aospre namelist.BOT namelist.TOP namelist.LHS namelist.RHS</code>
 
 and note the output generated.
 

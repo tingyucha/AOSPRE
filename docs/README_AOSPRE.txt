@@ -142,7 +142,7 @@ make all
 
 Barring any compilation errors, this will clean any old versions and 
 reinstall all the scripts with the correct library locations. The executable
-is called a.out. You are now able to run the AOSPRE code!
+is called aospre. You are now able to run the AOSPRE code!
 
 
 %%%% 4) Running the AOSPRE %%%%
@@ -217,10 +217,10 @@ AOSPRE output are in NetCDF format. A file called flightpath.ascii is also
 output as the aircraft flight tracker during the simulated flight.
 
 To invoke the code, you should be in your output directory, and then
-type: ./../code/embed-crsim/a.out <namelist>
+type: ./../code/embed-crsim/aospre <namelist>
 
 If running with parallel processing, type:
-mpirun -n N ../code/embed-crsim/a.out <namelist>
+mpirun -n N ../code/embed-crsim/aospre <namelist>
 
 
 %%%% Visualizing the AOSPRE output %%%%
