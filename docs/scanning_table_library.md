@@ -1,1 +1,1 @@
-*stub*
+Examples of scanning tables used with AOSPRE may be found in the directory "Scanning_Table_Library".
