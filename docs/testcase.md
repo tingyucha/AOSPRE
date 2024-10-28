@@ -117,7 +117,7 @@ namelist entries.  Several of the critical namelist entries are described below:
   seconds from model initialization) to start a data-collection flight
   leg.  Since the example WRF output files contain only 10 seconds of
   data (model output times at 4650 to 4660 seconds past
-  initialization), we've set up the namelists for an 8-secondn flight
+  initialization), we've set up the namelists for an 8-second flight
   leg starting at time 4651 seconds past initialization.
 
 ### leg_time_seconds
