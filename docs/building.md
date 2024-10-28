@@ -8,7 +8,7 @@ For important considerations before trying to build AOSPRE, please see the ["Pre
 
 ### Clone the AOSPRE GitHub repository
 
-The source repository for AOSPRE is located on GitHub at (https://github.com/NCAR/AOSPRE/)
+The source repository for AOSPRE is located on GitHub at [https://github.com/NCAR/AOSPRE/](https://github.com/NCAR/AOSPRE/).
 
 It may be obtained by running the following command:
 
