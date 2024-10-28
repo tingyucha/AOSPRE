@@ -79,7 +79,7 @@ Additionally, users may find some optional packages useful:
 
 >> ## ncview (_optional_)
 
-   >> ncview is commonly used as a quick-look tool for netCDF
+   >> ncview is commonly used as a quick-look tool for NetCDF
    format files (which AOSPRE produces). It is available at <a
    href="https://cirrus.ucsd.edu/ncview">https://cirrus.ucsd.edu/ncview</a>
    or may be available through your Linux distribution's package
