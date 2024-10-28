@@ -18,14 +18,14 @@ et al., 2020).  The CR-SIM routines compute various radar moments
 writes these results in the <b>CfRadial File Format</b> (Dixon and
 Lee, 2016).
 
-The goals of AOSPRE include:
+Some main goals of AOSPRE include:
 <ul>
 <li>providing researchers with realistic
 (though simulated) data sets as an aid to planning APAR flight
 strategies, scanning strategies, and analysis techniques.</li>
 <li>creating datasets
 useful for testing and developing APAR software processing tools.</li>
-<li> ... <i>etc.</i>
+<li>creating or updating various radar algorithms</i>
 </ul>
 
 The atmospheric models used as input to AOSPRE should ideally be run at
