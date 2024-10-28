@@ -1,7 +1,7 @@
 # APAR Observing Simulation, Processing, and Research Environment (AOSPRE)
 
 The <b>APAR Observing Simulation, Processing, and Research Environment (AOSPRE)</b> 
-is intended create data sets that simulate results from flights of the 
+is intended to create data sets that simulate results from flights of the 
 <b>Airborne Phased Array Radar (APAR)</b> observing platform.  AOSPRE relies 
 on high-resolution simulations of real or idealized weather events as provided 
 by, e.g., the <b>Weather Research and Forecasting Model</b> (WRF; Skamarock
