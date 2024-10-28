@@ -34,7 +34,7 @@ demonstration.  These data are found in the "wrfout" files in this directory:
 
 The <code>4650</code> and <code>4660</code> numerals in these sample
 filenames indicate the number of seconds since model initialization.
-You can use the netCDF utility program <code>ncdump</code> to examine
+You can use the NetCDF utility program <code>ncdump</code> to examine
 the contents of these model output files, and the <code>ncview</code>
 graphics utility program (if available) to get a quick look at the
 meteorological fields in these files.
@@ -189,7 +189,7 @@ the left-hand side panel of the APAR platform.  E.g.:
 <code>LHS_rhi_20010101_011735.700_to_20010101_011736.757.nc</code><br>
 <code>LHS_rhi_20010101_011736.852_to_20010101_011737.909.nc</code><br>
 
-These contents of these files may be examined with the netCDF utility
+These contents of these files may be examined with the NetCDF utility
 program <code>ncdump</code>, and may be explored with the
 <code>ncview</code> utility program.  Since these files are in radar
 coordinates, it is often difficult to make sense of the quick-look
