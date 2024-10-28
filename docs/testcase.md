@@ -140,7 +140,7 @@ namelist entries.  Several of the critical namelist entries are described below:
 
 > The test dataset (in the wrfout files) consists of three vertical
   slices, in the south-north direction, from a larger model grid.  The
-  dimensions of this subset grid (X x Y) are 400 x 3.  Our initial
+  dimensions of this subset grid (X x Y) are 3 x 400.  Our initial
   flight is set up to move from west to east at y=105, south of the
   main body of the storm, at 2000 meters above sea level.
 
