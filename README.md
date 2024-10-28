@@ -4,19 +4,19 @@ The APAR Observing Simulation, Processing, and Research Environment (AOSPRE) is 
 
 ## Documentation
 
-Online user's guide may be found at [https://github.com/NCAR/AOSPRE/](https://github.com/NCAR/AOSPRE/).
+Online user's guide may be found at [https://ncar.github.io/AOSPRE/](https://ncar.github.io/AOSPRE/).
 
 ## Preliminaries
 
-Before attempting to build or run AOSPRE, please see the ["Preliminaries and Prerequisites"](https://github.com/NCAR/AOSPRE/docs/preliminaries.md) documentation page.
+Before attempting to build or run AOSPRE, please see the ["Preliminaries and Prerequisites"](https://ncar.github.io/AOSPRE/docs/preliminaries.md) documentation page.
 
 ## Building
 
-For instructions on acquiring and building the AOSPRE code, see the ["Build the AOSPRE executable"](https://github.com/NCAR/AOSPRE/docs/building.md) documentation page.
+For instructions on acquiring and building the AOSPRE code, see the ["Build the AOSPRE executable"](https://ncar.github.io/AOSPRE/docs/building.md) documentation page.
 
 ## Testing
 
-For instructions on testing the AOSPRE executable with some sample data, see the ["Run the test case"](https://github.com/NCAR/AOSPRE/docs/testcase.md) documentation page.
+For instructions on testing the AOSPRE executable with some sample data, see the ["Run the test case"](https://ncar.github.io/AOSPRE/docs/testcase.md) documentation page.
 
 ## Run your own experiments with your own model output
 
