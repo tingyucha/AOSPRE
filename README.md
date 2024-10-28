@@ -8,15 +8,15 @@ Online user's guide may be found at [https://ncar.github.io/AOSPRE/](https://nca
 
 ## Preliminaries
 
-Before attempting to build or run AOSPRE, please see the ["Preliminaries and Prerequisites"](https://ncar.github.io/AOSPRE/preliminaries.md) documentation page.
+Before attempting to build or run AOSPRE, please see the ["Preliminaries and Prerequisites"](https://ncar.github.io/AOSPRE/preliminaries/) documentation page.
 
 ## Building
 
-For instructions on acquiring and building the AOSPRE code, see the ["Build the AOSPRE executable"](https://ncar.github.io/AOSPRE/building.md) documentation page.
+For instructions on acquiring and building the AOSPRE code, see the ["Build the AOSPRE executable"](https://ncar.github.io/AOSPRE/building/) documentation page.
 
 ## Testing
 
-For instructions on testing the AOSPRE executable with some sample data, see the ["Run the test case"](https://ncar.github.io/AOSPRE/testcase.md) documentation page.
+For instructions on testing the AOSPRE executable with some sample data, see the ["Run the test case"](https://ncar.github.io/AOSPRE/testcase/) documentation page.
 
 ## Run your own experiments with your own model output
 
