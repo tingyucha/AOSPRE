@@ -41,13 +41,13 @@
 ! skip_seconds_between_scans = 26.16
 skip_seconds_between_scans = 0.0
 
- !meters_between_gates           = 150.
- !meters_to_center_of_first_gate = 150.
- !max_range_in_meters            = 75000.
- 
-  meters_between_gates           = 75.
- meters_to_center_of_first_gate = 1.
+ meters_between_gates           = 150.
+ meters_to_center_of_first_gate = 150.
  max_range_in_meters            = 75000.
+ 
+ ! meters_between_gates           = 75.
+ !meters_to_center_of_first_gate = 1.
+ !max_range_in_meters            = 75000.
  
 /
 
