@@ -28,3 +28,6 @@ For instructions on testing the AOSPRE executable with some sample data, see the
 - Link or copy CR-SIM lookup tables
 - Unlimit stacksize
 - run AOSPRE
+
+## Digital Object Identifier (DOI)
+[![DOI](https://zenodo.org/badge/880361886.svg)](https://doi.org/10.5281/zenodo.14148308)
